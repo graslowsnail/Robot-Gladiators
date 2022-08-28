@@ -169,12 +169,23 @@ var shop = function () {
 
 /* GAME INFORMATION / VARIABLES */
 
+// function to set name
+var getPlayerName = function () {
+    var name = "";
+    while (name === "" || name === null) {
+        name = prompt("what is your robots name!");
+    }
+    console.log("Your robots name is " + name);
+    return name;
+};
+
 // player information
 var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
+
     reset: function () {
         this.health = 100;
         this.money = 10;
@@ -222,6 +233,7 @@ console.log(enemyInfo);
 console.log(enemyInfo[0]);
 console.log(enemyInfo[0].name);
 console.log(enemyInfo[0]['attack']);
+
 
 /* END GAME INFORMATION / VARIABLES */
 
